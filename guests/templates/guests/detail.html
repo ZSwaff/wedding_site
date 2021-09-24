@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>K+Z - {{ party }}</title>
+  </head>
+  <body>
+    <form action="{% url 'guests:modify' party.id %}" method="post">
+    {% csrf_token %}
+    <fieldset>
+      <legend><h1>{{ party.name }}</h1></legend>
+      {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+      {% for guest in party.guest_set.all %}
+        <input type="numeric" name="guest" id="guest{{ forloop.counter }}" value="{{ guest.meal }}">
+        <label for="guest{{ forloop.counter }}">{{ guest.full_name }}</label><br>
+      {% endfor %}
+    </fieldset>
+    <input type="submit" value="Modify">
+    </form>
+  </body>
+</html>
