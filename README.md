@@ -19,4 +19,7 @@ Inspired by the [Django introductory tutorials](https://docs.djangoproject.com/e
 ## More Things to Investigate
 1. Try arbitrary queries
 1. Try building with React/SPAs (and REST framework obviously)
-1. Try out more granular permissioning
+1. Try more granular permissioning
+1. Try auth with Google
+1. Try a multitenancy model
+1. Try session management
